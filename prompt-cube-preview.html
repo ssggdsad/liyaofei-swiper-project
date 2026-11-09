@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>任务一 · Cube 提示词验证</title>
+<link rel="stylesheet" href="vendor/swiper-bundle.min.css"><script src="vendor/swiper-bundle.min.js"></script>
+<style>*{box-sizing:border-box}body{margin:0;padding:28px;background:#f6f8fc;color:#1f2937;font-family:"Microsoft YaHei",sans-serif}.lyf_preview{width:min(820px,100%);margin:auto}.swiper{width:100%;height:360px;border-radius:16px}.swiper-slide img{width:100%;height:100%;object-fit:cover}.lyf_nav{display:flex;gap:18px;flex-wrap:wrap;margin-top:18px}.lyf_nav a{color:#1d4ed8}@media(max-width:600px){body{padding:18px}.swiper{height:260px}}</style>
+</head>
+<body><main class="lyf_preview"><h1>任务一 · Cube 提示词配置验证</h1>
+<p>单独验证循环、3.2 秒自动播放、手动操作后不停播、可点击圆点和初始 cube。综合作业页按任务四要求默认 slide。</p>
+<div class="swiper" id="wySw4"><div class="swiper-wrapper">
+<div class="swiper-slide"><img src="swiper-imgs/tiangong_1.jpg" alt="天宫空间站"></div>
+<div class="swiper-slide"><img src="swiper-imgs/fuxing_1.jpg" alt="复兴号动车组"></div>
+<div class="swiper-slide"><img src="swiper-imgs/c919_1.jpg" alt="C919"></div>
+<div class="swiper-slide"><img src="swiper-imgs/fendouzhe_1.jpg" alt="奋斗者号"></div>
+<div class="swiper-slide"><img src="swiper-imgs/fast_1.jpg" alt="中国天眼"></div>
+</div><div class="swiper-pagination" id="lyf_promptPagination"></div></div>
+<nav class="lyf_nav"><a href="swiper-task.html">返回综合作业页</a><a href="prompts.html">提示词与答辩记录</a></nav></main>
+<script>window.lyf_promptCubeSwiper=new Swiper('#wySw4',{loop:true,effect:'cube',speed:800,autoplay:{delay:3200,disableOnInteraction:false},pagination:{el:'#lyf_promptPagination',clickable:true},cubeEffect:{shadow:true,slideShadows:true,shadowOffset:20,shadowScale:0.94}});</script>
+</body></html>

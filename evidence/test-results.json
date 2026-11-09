@@ -1,0 +1,142 @@
+[
+  {
+    "name": "交付包含 swiper-task.html",
+    "passed": true
+  },
+  {
+    "name": "交付包含 prompts.html",
+    "passed": true
+  },
+  {
+    "name": "交付包含 prompt-cube-preview.html",
+    "passed": true
+  },
+  {
+    "name": "交付包含 wy_prompt.md",
+    "passed": true
+  },
+  {
+    "name": "交付包含 ai-dialogue.md",
+    "passed": true
+  },
+  {
+    "name": "交付包含 README.md",
+    "passed": true
+  },
+  {
+    "name": "展品图片存在 swiper-imgs/tiangong_1.jpg",
+    "passed": true
+  },
+  {
+    "name": "展品图片存在 swiper-imgs/fuxing_1.jpg",
+    "passed": true
+  },
+  {
+    "name": "展品图片存在 swiper-imgs/c919_1.jpg",
+    "passed": true
+  },
+  {
+    "name": "展品图片存在 swiper-imgs/fendouzhe_1.jpg",
+    "passed": true
+  },
+  {
+    "name": "展品图片存在 swiper-imgs/fast_1.jpg",
+    "passed": true
+  },
+  {
+    "name": "展品图片存在 swiper-imgs/adora-magic-city.jpg",
+    "passed": true
+  },
+  {
+    "name": "综合作业页桌面与手机截图、无横向溢出",
+    "passed": true
+  },
+  {
+    "name": "四个 Swiper 演示均初始化",
+    "passed": true
+  },
+  {
+    "name": "任务一可拖动并包含六件展品",
+    "passed": true
+  },
+  {
+    "name": "任务二循环、600ms、可点分页、前后箭头",
+    "passed": true
+  },
+  {
+    "name": "任务三每 2600ms 自动播放，手动后不停播",
+    "passed": true
+  },
+  {
+    "name": "任务四初始 slide、800ms、3200ms 自动播放、分页",
+    "passed": true
+  },
+  {
+    "name": "效果按钮销毁并重建为 fade",
+    "passed": true
+  },
+  {
+    "name": "效果按钮销毁并重建为 cube",
+    "passed": true
+  },
+  {
+    "name": "效果按钮销毁并重建为 coverflow",
+    "passed": true
+  },
+  {
+    "name": "效果按钮销毁并重建为 flip",
+    "passed": true
+  },
+  {
+    "name": "效果按钮销毁并重建为 cards",
+    "passed": true
+  },
+  {
+    "name": "效果按钮销毁并重建为 creative",
+    "passed": true
+  },
+  {
+    "name": "效果按钮销毁并重建为 slide",
+    "passed": true
+  },
+  {
+    "name": "creativeEffect 参数实现左右、缩放和 20 度旋转",
+    "passed": true
+  },
+  {
+    "name": "六张展品均有可读标题、替代文字和图片",
+    "passed": true
+  },
+  {
+    "name": "最后一张可浏览爱达·魔都号 AI 示意图",
+    "passed": true
+  },
+  {
+    "name": "键盘左右键只控制启用了 keyboard 的演示四",
+    "passed": true
+  },
+  {
+    "name": "提示词页面可从主作业打开，包含 AI 记录入口",
+    "passed": true
+  },
+  {
+    "name": "cube 提示词单独预览页初始为 cube",
+    "passed": true
+  },
+  {
+    "name": "1440px 不发生横向溢出",
+    "passed": true
+  },
+  {
+    "name": "390px 不发生横向溢出",
+    "passed": true
+  },
+  {
+    "name": "320px 不发生横向溢出",
+    "passed": true
+  },
+  {
+    "name": "浏览器无 JavaScript 页面错误",
+    "passed": true
+  }
+]
