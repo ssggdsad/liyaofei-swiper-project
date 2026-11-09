@@ -1,49 +1,86 @@
 <!doctype html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Swiper · AI 提示词与答辩记录</title>
-<style>
-*{box-sizing:border-box}body{margin:0;background:#f6f8fc;color:#1f2937;font-family:"Microsoft YaHei",sans-serif;line-height:1.75}
-.lyf_page{width:min(960px,calc(100% - 30px));margin:auto;padding:28px 0 60px}.lyf_head{padding:22px 26px;background:#0f2b5b;color:white;border-radius:12px}
-.lyf_nav{display:flex;flex-wrap:wrap;gap:16px;margin:18px 0}.lyf_nav a{color:#1d4ed8}.lyf_section{margin:16px 0;padding:20px 22px;background:#fff;border:1px solid #dbe4f5;border-radius:10px}
-.lyf_section h2{margin:0 0 12px;color:#0f2b5b;font-size:21px}.lyf_section h3{margin:18px 0 6px;color:#1d5bbf;font-size:16px}
-.lyf_prompt,.lyf_answer,.lyf_note{padding:12px 14px;border-radius:8px}.lyf_prompt{background:#f1f5fb;border:1px solid #dbe4f5}.lyf_answer{background:#f0fdf4;border:1px solid #bbf7d0}.lyf_note{background:#fffbea;border-left:4px solid #e8890c}
-.lyf_code{display:block;padding:14px;background:#101b2d;color:#eef4ff;border-radius:7px;white-space:pre;overflow-x:auto;font:13px/1.7 Consolas,monospace}
-@media(max-width:600px){.lyf_head,.lyf_section{padding:17px}.lyf_head h1{font-size:22px}.lyf_code{white-space:pre-wrap;overflow-wrap:anywhere;word-break:break-word}}
-</style></head>
-<body><main class="lyf_page">
-<header class="lyf_head"><h1>Swiper 课堂项目 · AI 对话记录</h1><p>任务拆解、两轮提示词迭代、creative 效果学习与键盘答辩参考。</p></header>
-<nav class="lyf_nav"><a href="swiper-task.html">综合作业页</a><a href="prompt-cube-preview.html">Cube 提示词验证页</a><a href="wy_prompt.md">打开 wy_prompt.md</a><a href="ai-dialogue.md">技术答辩笔记</a></nav>
-<section class="lyf_section"><h2>任务一 · 提示词工程师</h2>
-<h3>第一轮提示词</h3><div class="lyf_prompt">我在用老师提供的 Swiper 11.0.3。请给我一段 new Swiper('#wySw4', {...}) 配置，让它循环播放、3.2秒自动翻页，并显示可以点击的圆点分页器（#wyPag4）。给出最小代码及简单解释即可。</div>
-<h3>第一轮 AI 回答</h3><div class="lyf_answer">假设页面已经引入 Swiper 且有对应容器：<pre class="lyf_code">new Swiper('#wySw4', {
-  loop: true,
-  autoplay: { delay: 3200 },
-  pagination: { el: '#wyPag4', clickable: true }
-});</pre>解释：loop 开启循环；delay 是 3200 毫秒；pagination 指定圆点元素并允许点击。第一轮提示词没提 cube，也没要求手动操作后继续播放，所以回答未覆盖这两项。</div>
-<h3>第二轮提示词</h3><div class="lyf_prompt">你上次的配置漏了两个条件：初始效果必须是 cube；用户手动操作后自动播放不能停止。请重写：loop true；effect cube；autoplay.delay 3200 且 disableOnInteraction false；pagination.el #wyPag4 且 clickable true；speed 800。给出代码并逐项解释。</div>
-<h3>第二轮 AI 回答（Codex）</h3><pre class="lyf_code">new Swiper('#wySw4', {
-  loop: true,
-  effect: 'cube',
-  speed: 800,
-  autoplay: { delay: 3200, disableOnInteraction: false },
-  pagination: { el: '#wyPag4', clickable: true },
-  cubeEffect: { shadow: true, slideShadows: true, shadowOffset: 20, shadowScale: 0.94 }
-});</pre>
-<div class="lyf_answer">loop 循环；effect 指定 cube；speed 控制 800 毫秒动画；autoplay.delay 是 3200 毫秒；disableOnInteraction:false 让手动操作后继续自动播放；pagination.clickable 让圆点可点击；cubeEffect 设置立方体阴影。该配置在 Cube 验证页独立测试，综合任务四仍按要求默认 slide。</div></section>
-<section class="lyf_section"><h2>任务二 · creative 电影墙</h2>
-<div class="lyf_prompt">读本课 Swiper 11.0.3 官方示例 257-effect-creative.html，仿写上一张缩小左移、下一张放大右移进场的 creativeEffect，并解释 prev/next、translate、rotate 和百分比基准。</div>
-<pre class="lyf_code">creativeEffect: {
-  prev: { translate: ['-24%', 0, -180], scale: 0.82, rotate: [0, 0, -20] },
-  next: { translate: ['110%', 0, 0], scale: 1.12, rotate: [0, 0, 20] }
-}</pre>
-<div class="lyf_answer"><b>答辩参考：</b>prev 控制当前页前面的卡片，next 控制即将进入的卡片；translate 是横、纵、深度位移，百分比相对 slide 尺寸；rotate 三个值分别是 X/Y/Z 轴角度，第三个数改成 20 就绕 Z 轴旋转 20°。scale 小于 1 缩小，大于 1 放大。</div></section>
-<section class="lyf_section"><h2>任务三 · 邮轮图片与键盘功能</h2>
-<h3>图片生成提示词</h3><div class="lyf_prompt">A 16:9 landscape editorial concept illustration of Adora Magic City, a Chinese-built large cruise ship. Full white ship with tiered passenger decks, dark window bands and orange lifeboats, sailing on calm blue ocean at golden sunrise. Three-quarter side view, realistic maritime scale, no text, logo or watermark. Educational AI illustration, not an official photograph.</div>
-<p>输出裁切为 1600×900；页面明确标注 AI 示意图，不冒充官方实拍。</p>
-<h3>键盘控制与现场改参</h3><pre class="lyf_code">keyboard: { enabled: true, onlyInViewport: true }</pre>
-<div class="lyf_answer">enabled 开启方向键；onlyInViewport 让轮播在视口内时才响应。把 delay 改为 5000 后每张等待约 5 秒；speed 仍是 800 毫秒切换动画，不会随 delay 改变。</div>
-<div class="lyf_note"><b>诚实记录：</b>第一轮输入漏写两项要求，第二轮补齐。最初图像服务请求失败，换用已配置的备用图像服务后生成成功。自动化截图不代表学生本人已经现场操作；答辩前请自己拖动、点击效果并练习改 delay。</div></section>
-<footer class="lyf_nav"><a href="swiper-task.html">回到综合作业</a><a href="prompt-cube-preview.html">Cube 验证</a></footer>
-</main></body></html>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>prompt.md · Swiper 项目真实对话记录</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; background: #f5f7fb; color: #202d42; font-family: "Microsoft YaHei", system-ui, sans-serif; line-height: 1.7; }
+    .lyf_page { width: min(1060px, calc(100% - 32px)); margin: 28px auto 56px; }
+    .lyf_head { padding: 26px 30px; border-radius: 12px; background: linear-gradient(120deg, #10305f, #235eb2); color: #fff; }
+    .lyf_head h1 { margin: 0 0 8px; font-size: 26px; }
+    .lyf_head p { margin: 0; color: #e0eaff; }
+    .lyf_nav { display: flex; flex-wrap: wrap; gap: 10px; margin: 16px 0; }
+    .lyf_nav a, .lyf_nav button { border: 1px solid #d3def0; border-radius: 7px; background: #fff; color: #174b92; padding: 8px 13px; font: inherit; text-decoration: none; cursor: pointer; }
+    .lyf_notice { margin: 14px 0; padding: 12px 16px; border-left: 4px solid #cc861c; border-radius: 5px; background: #fff8e8; }
+    .lyf_section { margin: 16px 0; padding: 20px; border: 1px solid #dce4f0; border-radius: 9px; background: #fff; }
+    .lyf_section h2 { margin: 0 0 12px; color: #153d78; font-size: 20px; }
+    .lyf_log { display: block; width: 100%; height: min(74vh, 940px); min-height: 620px; border: 1px solid #dbe3ef; border-radius: 7px; background: #fff; }
+    .lyf_evidence figure { margin: 20px 0; }
+    .lyf_evidence img { display: block; width: 100%; height: auto; border: 1px solid #dce4f0; border-radius: 7px; }
+    .lyf_evidence figcaption { margin-top: 7px; color: #4b5e78; font-size: 14px; }
+    .lyf_note { color: #586b86; font-size: 14px; }
+    .lyf_evidence a { color: #174b92; }
+    @media (max-width: 600px) {
+      .lyf_page { width: min(100% - 20px, 1060px); margin-top: 12px; }
+      .lyf_head, .lyf_section { padding: 17px; }
+      .lyf_head h1 { font-size: 21px; }
+      .lyf_log { height: 72vh; min-height: 480px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="lyf_page">
+    <header class="lyf_head">
+      <h1>prompt.md · 我与 Codex 完成项目的真实对话</h1>
+      <p>以下直接显示本项目的 prompt.md；用户原话和已展示的 Codex 回复按时间整理。</p>
+    </header>
+    <nav class="lyf_nav" aria-label="项目页面">
+      <a href="swiper-task.html">返回轮播作品</a>
+      <a href="prompt.md">打开 prompt.md 原文件</a>
+      <a href="prompt.md" download>下载 prompt.md</a>
+      <button type="button" id="lyf_latest">跳到最新记录</button>
+      <a href="#lyf_evidence">查看验证截图</a>
+      <a href="prompt-cube-preview.html">Cube 验证页</a>
+    </nav>
+    <p class="lyf_notice">这里展示的是实际用户提示词与 Codex 回复，不把 AI 自拟提示词、内部练习或答辩笔记伪装成你的原话。需要 Markdown 原文时可直接打开上方文件。</p>
+    <section class="lyf_section">
+      <h2>真实项目对话</h2>
+      <iframe class="lyf_log" id="lyf_log" src="prompt.md" title="Swiper 项目 prompt.md 真实对话记录"></iframe>
+      <p class="lyf_note" id="lyf_status" aria-live="polite">正在载入 prompt.md。</p>
+    </section>
+    <section class="lyf_section lyf_evidence" id="lyf_evidence">
+      <h2>验证截图与一句话结论</h2>
+      <figure>
+        <a href="evidence/prompt-cube-preview.png"><img src="evidence/prompt-cube-preview.png" alt="Cube 配置验证页截图" loading="lazy"></a>
+        <figcaption>Cube 独立页展示初始 cube、循环、3.2 秒自动播放、交互后续播和可点击分页器。</figcaption>
+      </figure>
+      <figure>
+        <a href="evidence/swiper-creative-transition.png"><img src="evidence/swiper-creative-transition.png" alt="creative 切换中前后卡片缩放位移与旋转" loading="lazy"></a>
+        <figcaption>切换过程截图可见上一张缩小左移并旋转、下一张放大并从右侧进入；详细说明见 evidence/README.md。</figcaption>
+      </figure>
+      <figure>
+        <a href="evidence/swiper-adora.png"><img src="evidence/swiper-adora.png" alt="第六件展品爱达魔都号 AI 示意图" loading="lazy"></a>
+        <figcaption>第六件展品使用 1600×900 横版 AI 示意图，作品页标明非官方实拍；键盘方向键控制视口内的演示四。</figcaption>
+      </figure>
+      <p><a href="evidence/README.md">证据说明</a> · <a href="evidence/test-results.json">轮播自动化验收明细</a> · <a href="requirements.md">老师要求逐项核对</a> · <a href="ai-dialogue.md">技术学习笔记（非对话原文）</a> · <a href="wy_prompt.md">历史执行日志</a></p>
+      <p class="lyf_note">浏览器自动化截图只证明页面和配置状态，不证明学生本人已完成两轮提问、现场操作或答辩。</p>
+    </section>
+  </main>
+  <script>
+    const lyf_frame = document.getElementById('lyf_log');
+    const lyf_status = document.getElementById('lyf_status');
+    lyf_frame.addEventListener('load', () => { lyf_status.textContent = '已载入同目录 prompt.md。'; });
+    document.getElementById('lyf_latest').addEventListener('click', () => {
+      try {
+        const lyf_doc = lyf_frame.contentDocument;
+        const lyf_scroll = lyf_doc.scrollingElement || lyf_doc.documentElement;
+        lyf_frame.contentWindow.scrollTo({ top: lyf_scroll.scrollHeight, behavior: 'smooth' });
+      } catch {
+        lyf_status.textContent = '无法在此浏览器内滚动预览，请打开 prompt.md 原文件查看最新记录。';
+      }
+    });
+  </script>
+</body>
+</html>

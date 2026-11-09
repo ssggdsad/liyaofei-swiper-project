@@ -8,6 +8,10 @@
     "passed": true
   },
   {
+    "name": "交付包含 prompt.md",
+    "passed": true
+  },
+  {
     "name": "交付包含 prompt-cube-preview.html",
     "passed": true
   },
@@ -17,6 +21,10 @@
   },
   {
     "name": "交付包含 ai-dialogue.md",
+    "passed": true
+  },
+  {
+    "name": "交付包含 requirements.md",
     "passed": true
   },
   {
@@ -45,6 +53,14 @@
   },
   {
     "name": "展品图片存在 swiper-imgs/adora-magic-city.jpg",
+    "passed": true
+  },
+  {
+    "name": "展品图片存在 evidence/swiper-creative-transition.png",
+    "passed": true
+  },
+  {
+    "name": "展品图片存在 evidence/prompt-dialogue.png",
     "passed": true
   },
   {
@@ -116,7 +132,7 @@
     "passed": true
   },
   {
-    "name": "提示词页面可从主作业打开，包含 AI 记录入口",
+    "name": "对话入口直接展示真实 prompt.md，含验证截图",
     "passed": true
   },
   {

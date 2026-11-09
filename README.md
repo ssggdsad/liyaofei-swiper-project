@@ -11,8 +11,10 @@
 
 - `swiper-task.html`：四个课堂任务，任务四初始 `slide`，点击按钮会销毁并重建实例。
 - `prompt-cube-preview.html`：单独验证任务一的 cube 配置。它与任务四的 slide 默认要求分别演示。
-- `prompts.html`：网页可访问的提示词、答辩问答与任务记录入口。
-- `ai-dialogue.md`：完整 AI 对话记录文本。
+- `prompts.html`：直接读取 `prompt.md`，展示用户与 Codex 的真实项目对话；含截图入口。
+- `prompt.md`：真实用户原话与 Codex 回复（主会话消息时间戳核验后补记）。
+- `ai-dialogue.md`：技术学习笔记，不是聊天记录。
+- `requirements.md`：按老师截图逐项核对的结果及仍需学生本人完成的事项。
 
 ## 验收摘要
 
