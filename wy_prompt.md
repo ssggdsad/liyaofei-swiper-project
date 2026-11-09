@@ -90,3 +90,5 @@ new Swiper('#wySw4', {
 > 因为我刚刚合并了上下文，所以你回忆一下项目细节继续完成项目
 
 **执行动作与状态**：读取本项目记录和桌面文件状态，确认继续此前已授权的 Swiper 作业。桌面项目位于现有 Gitee 父仓库内，保持原 Gitee 远程不变；目标 GitHub 仓库尚未创建。本轮尚未重跑最新验收、推送或发布，后续状态按实际结果补记。
+
+**最终执行结果（2026-11-09 15:51）**：桌面副本浏览器验收 35/35 通过，更新并目视检查 `evidence/` 截图。独立公开仓库已创建并推送：`https://github.com/ssggdsad/liyaofei-swiper-project`；GitHub Pages 从 `main` 根目录发布：`https://ssggdsad.github.io/liyaofei-swiper-project/`。线上浏览器核验综合页和 Cube 页均正常，4 个轮播初始化、6 个图片资源 HTTP 200、creative 可切换、`wy_prompt.md` 可访问，未发现失败资源或页面错误。只提交 Swiper 子项目，父仓库 Gitee 远程和其他作业未动。
